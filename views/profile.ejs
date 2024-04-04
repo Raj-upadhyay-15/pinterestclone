@@ -1,0 +1,44 @@
+<% include ./partials/header.ejs %>
+<div class="page profile w-full min-h-screen  text-white pt-1">
+    <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
+    <div class="profdets flex flex-col items-start items-center mt-20">
+        <div class="boxx relative">
+            <span id="uploadicon">  <i class="ri-pencil-fill"></i></span>
+         
+            <div class="w-44 h-44  bg-zinc-200 rounded-full overflow-hidden"> 
+                <img class="w-full h-full object-cover" 
+                src="/images/uploads/<%= user.profileimage %>" alt="">
+            </div>
+        </div>
+
+            <h1 class="hello"><%= user.username %></h1>
+           
+       <a href="/add" class="px-8 py-2 rounded-lg bg-red-700 mt-2 font-semibold">Add New Post</a>
+    </div>
+    <div class="cards flex flex-wrap gap-10 px-16 mt-10">
+        <div class="card">
+            <% if (user.posts && user.posts.length > 0 && user.posts[0].postimage) { %>
+                <div class="w-52 h-44 bg-zinc-200 rounded-lg overflow-hidden">
+                  <img class="w-full h-full object-cover" src="/images/uploads/<%= user.posts[0].postimage %>" alt="">
+                </div>
+              <% } else { %>
+                <!-- Handle the case when user.posts is empty or image is undefined -->
+                <p class="text-black">No uploaded Pins available.</p>
+              <% } %>
+           
+   <a  href="/show/posts" class="texxt  mt-3">All uploaded Pins</a>
+   <h5 class="textt"><%= user.posts.length%> Pins</h5>
+    </div>
+ </div>
+</div>
+<script>
+    document.querySelector('#uploadicon').addEventListener("click",function(){
+        document.querySelector("#uploadform input").click();
+    });
+    document.querySelector('#uploadform input').addEventListener("change",function(){
+    document.querySelector('#uploadform').submit();
+    })
+</script>
+<% include ./partials/footer.ejs %>

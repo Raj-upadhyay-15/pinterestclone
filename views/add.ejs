@@ -1,0 +1,18 @@
+<% include ./partials/header.ejs %>
+<div id="page1">
+   
+    <div id="postform">
+   <form  action="/createpost" method="post" enctype="multipart/form-data">
+        <input class=" imagepost  rounded-md  " type="file" name="postimage" >
+      <input class="detailspost rounded-md " type="text" placeholder="Title" name="title">
+         <input class=" detailspost1 rounded-md h-32" type="text" placeholder="Description" name="description">
+     <input class="det w-32 h-16 rounded-md bg-slate-400 px- py-" type="submit" value="Create">
+        
+    </form> 
+ </div>
+</div>
+
+
+
+
+<% include ./partials/footer.ejs %>

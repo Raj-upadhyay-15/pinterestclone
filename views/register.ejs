@@ -1,0 +1,25 @@
+<%include ./partials/header.ejs %>
+<div class="w-full h-screen bg-[url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] flex items-center justify-center">
+    <div class="w-full h-screen  flex items-center justify-center">
+      <div class="w-80 h-auto bg-zinc-100 px-4 py-10 rounded-[30px] ">
+        <i id="icon" class="ri-pinterest-line"></i>
+       <h1 class=" ml-5 mt-1 text-2xl leading-none">Create new account.</h1>
+       <form action="/register" method="post">
+      
+        <label class=" inline-block mt-3 text-1xl" for="username">Username</label>
+        <input class="px-3 border-2 rounded-md mt-2 w-full px-3 py-2" id="username" type="text" name="username" placeholder="username">
+        <label class=" inline-block mt-3 text-1xl" for="username">Email</label>
+        <input class="px-3 border-2 rounded-md mt-2 w-full px-3 py-2" id="email" type="email" name="Email" placeholder="email">
+        <label class=" inline-block mt-3 text-1xl" for="username">Contact Number</label>
+        <input class="px-3 border-2 rounded-md mt-2 w-full px-3 py-2" id="number" type="number" name="number" placeholder="Contact number">
+        <label class=" inline-block mt-3 text-1xl" for="password">Password</label>
+        <input class=" border-2 rounded-md mt-2 w-full px-3 py-2" id="password" type="password" name="password" placeholder="password">
+        <input class="mt-3 w-full px-3 py-2 bg-red-600 text-white rounded-full" type="submit" value="Create new account">
+
+       <a class="inline-block mt-2 text-1xl text-zinc-500 font-semibold  w-full text-center" href ="/">Already have an account ?</a>
+      </form>
+      </div>
+    
+    </div>
+    </div>
+<%include ./partials/footer.ejs %>

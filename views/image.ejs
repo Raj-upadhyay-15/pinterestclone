@@ -1,0 +1,19 @@
+<%include ./partials/header.ejs %>
+<div id="imagepage w-100  py-1 ">
+<div id="backk">
+    <a href="/show/posts"><i class="ri-arrow-left-line"></i></a>
+</div>
+
+<div id="imagebox">
+    <div id="imagecontainer">
+      <img src="/images/uploads/<%= selectedPost.postimage %>" alt="">
+    </div>
+    <div id="details">
+      <div id="title"><h2><span> Title: <%= selectedPost.title %></span></h2></div>
+      <div id="description">
+        <p><span>Description:</span> <%= selectedPost.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<%include ./partials/footer.ejs %>
